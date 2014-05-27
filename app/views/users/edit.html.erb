@@ -1,0 +1,14 @@
+<div class="page">
+  <h1>Edit <%= @user.first_name %> <%= @user.last_name %>'s Account Details</h1>
+  <%= render "user_form" %>
+
+  <hr>
+
+  <%= form_for @user, method: 'delete' do |f| %>
+    <%= f.submit "Delete" %>
+  <% end %>
+
+  <hr>
+
+  <%= link_to "Cancel", user_path(@user) %>
+</div>

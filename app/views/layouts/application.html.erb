@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="navigation" role="navigation">
+    <%= link_to "Home", root_path %>
+  </div>
+
+  <div class="signin">
+    <%= render 'common/signout' %>
+  </div>
+
+
+  <%= yield %>
 
 </body>
 </html>

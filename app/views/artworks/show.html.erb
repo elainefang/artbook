@@ -1,0 +1,18 @@
+<div class="page">
+  <% if params[:user_id] %>
+    <h1><%= @artwork.title %></h1>
+    <p>By <%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
+    <p><%= image_tag @artwork.image_url, width: "500px" %></p>
+    <p><%= @artwork.description %></p>
+
+    <% if @page_user == current_user %>
+      <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork) %></p>
+      <p>
+        <%= form_for [@user, @artwork], method: 'delete' do |f| %>
+          <%= f.submit "Remove Artwork", id: "destroy" %>
+        <% end %>
+      </p>
+    <% end %>
+
+  <% end %>
+</div>

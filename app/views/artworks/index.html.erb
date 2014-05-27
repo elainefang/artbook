@@ -1,0 +1,15 @@
+<div class="page">
+  <h1><%= @user.first_name %> <%= @user.last_name %>'s Gallery</h1>
+
+  <ul>
+    <% @artworks.each do |artwork| %>
+      <li>
+        <p><%= link_to artwork.title, user_artwork_path(@user, artwork) %></p>
+        <p><%= image_tag artwork.image_url, width: "500px" %></p>
+        <p><%= artwork.description %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <p><%= link_to "Upload Artwork", new_user_artwork_path(@user) %></p>
+</div>

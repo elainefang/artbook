@@ -1,0 +1,17 @@
+<div class="page">
+  <h1>Sign In</h1>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :p, msg, class: name %>
+  <% end %>
+
+  <%= form_for :session, url: sessions_path do |f| %>
+    <p><%= f.label :email %>
+      <%= f.text_field :email %></p>
+
+    <p><%= f.label :password %>
+    <%= f.password_field :password %></p>
+
+    <%= f.submit 'Sign In', id: 'signin' %>
+  <% end %>
+</div>

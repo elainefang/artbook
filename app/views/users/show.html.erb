@@ -1,0 +1,12 @@
+<div class="page">
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+  <p>Email: <%= @user.email %></p>
+  <p>Joined: <%= @user.created_at %></p>
+
+  <p><%= link_to "Edit", edit_user_path(@user) %></p>
+
+  <p><%= link_to "Gallery", user_artworks_path(@user) %></p>
+
+  <p><%= link_to "Follow", follow_user_path(@user)%></p>
+</div>
