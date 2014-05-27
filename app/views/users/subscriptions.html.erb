@@ -1,4 +1,18 @@
 <div class="page">
   <h1><%= @user.first_name %> <%= @user.last_name %>'s Subscriptions</h1>
 
+
+  <% @user.all_following_users.each do |following| %>
+    <h2><a href='/users/<%= following.id.to_s %>'><%= following.first_name %> <%= following.last_name %></a></h2>
+
+    <% if following.artworks != [] %>
+      <h3>Latest Project</h3>
+      <p><%= following.artworks[-1].title %></p>
+
+      <p><%= image_tag following.artworks[-1].image_url, width: "500px" %></p>
+      <p>Uploaded: <%= following.artworks[-1].created_at.strftime("%b %d, %Y") %>
+    <% end %>
+
+  <% end %>
+
 </div>

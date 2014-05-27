@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
 
   get '/users/:id/subscriptions' => 'users#subscriptions'
+  get '/users/:id/followers' => 'users#followers'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

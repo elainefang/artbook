@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
   belongs_to :user
 
   acts_as_follower
+  acts_as_followable
+
+
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://si0.twimg.com/sticky/default_profile_images/default_profile_4.png"
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Add handlers to run when creating and saving
   before_create :create_remember_token

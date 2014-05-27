@@ -1,28 +1,29 @@
-== README
+# Tunr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### April 2014, Project 1
 
-Things you may want to cover:
+### Overview
 
-* Ruby version
+**Artbook** is an online art portfolio application. Artbook was developed as a Rails project within the April 2014 Web Development Immersive course at General Assembly.
 
-* System dependencies
+### Technologies Used
 
-* Configuration
+* Ruby 2.1.1
+* Ruby on Rails 4.1.1
+* PostgreSQL Database
+* Authentication & Authorization from scratch using [bcrypt-ruby](http://bcrypt-ruby.rubyforge.org/)
+* Testing using using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
 
-* Database creation
+### User Stories Completed
 
-* Database initialization
+* As a user, I should land on a splash page for the site
+* As a user, I should be able to sign in and out of a secure account
+* As a user, I should be able to upload artwork to my online portfolio
+* As a user, I should be able to follow other users who's art I like
 
-* How to run the test suite
+### Backlog
 
-* Services (job queues, cache servers, search engines, etc.)
+A full list of user stories can be found by looking at [this Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/1086754)
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+---
+###### Written by Elaine Fang

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_signin, except: [:new, :create, :show]
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_current_user, except: [:new, :create, :show]
+  before_action :require_signin, except: [:new, :create, :show, :follow, :unfollow, :subscriptions, :followers]
+  before_action :find_user, only: [:show, :edit, :update, :destroy, :follow, :unfollow, :subscriptions, :followers]
+  before_action :require_current_user, except: [:new, :create, :show, :subscriptions, :followers, :follow, :unfollow]
 
 
   def new
@@ -39,37 +39,24 @@ class UsersController < ApplicationController
   end
 
   def follow
-    @user = User.find(params[:id])
 
     current_user.follow(@user)
-    redirect_to '/users/<%= current_user.id.to_s %>/subscriptions'
+    redirect_to user_path(@user)
 
-    # if current_user
-    #   if current_user == @user
-    #     flash[:error] = "You cannot follow yourself."
-    #   else
-    #     current_user.follow(@user)
-    #     RecommenderMailer.new_follower(@user).deliver if @user.notify_new_follower
-    #     flash[:notice] = "You are now following #{@user.first_name} #{@user.last_name}."
-    #   end
-    # else
-    #   flash[:error] = "You must <a href='/signin'>login</a> to follow #{@user.first_name} #{@user.last_name}.".html_safe
-    # end
   end
 
   def unfollow
-    @user = User.find(params[:id])
 
-    if current_user
-      current_user.stop_following(@user)
-      flash[:notice] = "You are no longer following #{@user.first_name} #{@user.last_name}."
-    else
-      flash[:error] = "You must <a href='/signin'>login</a> to unfollow #{@user.first_name} #{@user.last_name}.".html_safe
-    end
+    current_user.stop_following(@user)
+    redirect_to user_path(@user)
+
   end
 
   def subscriptions
-    @user = User.find(params[:id])
+
+  end
+
+  def followers
   end
 
   private
@@ -84,7 +71,8 @@ class UsersController < ApplicationController
       :last_name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :avatar
     )
   end
 

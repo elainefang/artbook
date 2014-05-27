@@ -1,12 +1,24 @@
 <div class="page">
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
+
+  <%= image_tag @user.avatar.url(:medium) %>
+
   <p>Email: <%= @user.email %></p>
-  <p>Joined: <%= @user.created_at %></p>
+  <p>Joined: <%= @user.created_at.strftime("%b %d, %Y") %></p>
+  <p>Followers: <a href="/users/<%= @user.id.to_s %>/followers"><%= @user.count_user_followers.to_s %></a></p>
+  <p>Following: <a href="/users/<%= @user.id.to_s %>/subscriptions"><%= @user.follow_count.to_s %></a></p>
 
   <p><%= link_to "Edit", edit_user_path(@user) %></p>
 
   <p><%= link_to "Gallery", user_artworks_path(@user) %></p>
 
-  <p><%= link_to "Follow", follow_user_path(@user)%></p>
+  <% if current_user %>
+    <% if @user.followed_by?(current_user) %>
+      <p><%= link_to "Unfollow", unfollow_user_path(@user)%></p>
+    <% else %>
+      <p><%= link_to "Follow", follow_user_path(@user)%></p>
+    <% end %>
+  <% end %>
+
 </div>
