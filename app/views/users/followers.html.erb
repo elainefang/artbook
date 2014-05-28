@@ -3,7 +3,10 @@
 
 
   <% @user.user_followers.each do |follower| %>
-    <h2><a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a></h2>
+    <h2>
+      <%= image_tag(follower.avatar.url(:tiny), :class => "icon") %>
+      <a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a>
+    </h2>
 
     <% if follower.artworks != [] %>
       <h3>Latest Project</h3>

@@ -1,7 +1,7 @@
 <div class="page">
   <% if params[:user_id] %>
     <h1><%= @artwork.title %></h1>
-    <p>By <%= @artwork.user.first_name %> <%= @artwork.user.last_name %></p>
+    <p>By <a href="/users/<%= @page_user.id %>"><%= @artwork.user.first_name %> <%= @artwork.user.last_name %></a></p>
 
     <% if @artwork.image_url != "" %>
       <p><%= image_tag @artwork.image_url, width: "500px" %></p>

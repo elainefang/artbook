@@ -5,6 +5,8 @@
     <%= f.submit "Sign Out", id: 'signout' %>
   <% end %>
 
+  <p><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></a></p>
+
   <p><%= link_to "My Gallery", user_artworks_path(current_user) %></p>
 
   <p><a href='/users/<%= current_user.id.to_s %>/subscriptions'>My Subscriptions (<%= current_user.follow_count.to_s %>)</a></p>
