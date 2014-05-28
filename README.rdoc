@@ -1,4 +1,4 @@
-# Artbook
+Artbook
 =========
 
 **Artbook** is an online art portfolio application. Artbook was developed as a Rails project within the April 2014 Web Development Immersive course at General Assembly.
@@ -10,7 +10,7 @@ Technologies Used
   - Ruby on Rails 4.1.1
   - PostgreSQL Database
   - Authentication & Authorization from scratch using [bcrypt-ruby](http://bcrypt-ruby.rubyforge.org/)
-* Testing using using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+  - Testing using using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
   - File attachment management using [Paperclip](https://github.com/thoughtbot/paperclip)
   - Follow functionality for users through [acts-as-follower](https://github.com/tcocca/acts_as_follower).
 
