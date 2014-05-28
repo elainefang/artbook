@@ -54,6 +54,15 @@ class UsersController < ApplicationController
   end
 
   def subscriptions
+    followed_artworks = []
+
+    @user.all_following_users.each do |following|
+      following.artworks.each do |artwork|
+        followed_artworks.push(artwork)
+      end
+    end
+
+    @recent_artworks = (followed_artworks.sort_by {|artwork| artwork.created_at }).reverse
 
   end
 

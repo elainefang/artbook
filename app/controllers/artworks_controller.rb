@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  before_action :require_current_user, except: [:index, :show]
   before_action(:load_user, only: [:index, :new, :create, :show, :edit, :update, :destroy] )
   before_action(:load_artwork, { only: [:edit, :update, :show, :destroy] })
 
@@ -55,5 +56,10 @@ class ArtworksController < ApplicationController
       params.require(:artwork).permit(:title, :description, :image_url, :art_image, :user_id)
     end
 
+    def require_current_user
+      if !current_user?(@user)
+        redirect_to root_path
+      end
+    end
 
 end

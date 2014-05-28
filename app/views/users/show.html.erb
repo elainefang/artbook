@@ -9,7 +9,9 @@
   <p>Followers: <a href="/users/<%= @user.id.to_s %>/followers"><%= @user.count_user_followers.to_s %></a></p>
   <p>Following: <a href="/users/<%= @user.id.to_s %>/subscriptions"><%= @user.follow_count.to_s %></a></p>
 
-  <p><%= link_to "Edit", edit_user_path(@user) %></p>
+  <% if current_user == @user %>
+    <p><%= link_to "Edit", edit_user_path(@user) %></p>
+  <% end %>
 
   <p><%= link_to "Gallery", user_artworks_path(@user) %></p>
 

@@ -1,24 +1,28 @@
 <div class="page">
   <h1><%= @user.first_name %> <%= @user.last_name %>'s Subscriptions</h1>
+  <h2>Latest Artwork</h2>
 
+  <% if @recent_artworks != [] %>
 
-  <% @user.all_following_users.each do |following| %>
-    <h2><a href='/users/<%= following.id.to_s %>'><%= following.first_name %> <%= following.last_name %></a></h2>
+    <% @recent_artworks.first(12).each do |artwork| %>
 
-    <% if following.artworks != [] %>
-      <h3>Latest Project</h3>
-      <p><%= following.artworks[-1].title %></p>
+      <h3><%= artwork.title %></a></h3>
+      <p>By <a href='/users/<%= artwork.user.id.to_s %>'><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>
 
-      <% if following.artworks[-1].image_url != "" %>
-        <p><%= image_tag following.artworks[-1].image_url, width: "500px" %></p>
-      <% elsif following.artworks[-1].art_image %>
-        <p><%= image_tag following.artworks[-1].art_image.url(:medium) %></p>
+      <% if artwork.image_url != "" %>
+        <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.image_url, width: "500px" %></a></p>
+      <% elsif artwork.art_image %>
+        <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.art_image.url(:medium) %></a></p>
       <% end %>
 
+      <p>Uploaded: <%= artwork.created_at.strftime("%b %d, %Y") %>
 
-      <p>Uploaded: <%= following.artworks[-1].created_at.strftime("%b %d, %Y") %>
+
     <% end %>
 
+    <br>
+
   <% end %>
+
 
 </div>
