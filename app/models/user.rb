@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   acts_as_followable
 
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://si0.twimg.com/sticky/default_profile_images/default_profile_4.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://codegurl.com/wp-content/uploads/2014/05/egg.jpg"
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 

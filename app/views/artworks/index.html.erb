@@ -5,7 +5,13 @@
     <% @artworks.each do |artwork| %>
       <li>
         <p><%= link_to artwork.title, user_artwork_path(@user, artwork) %></p>
-        <p><%= image_tag artwork.image_url, width: "500px" %></p>
+
+        <% if artwork.image_url != "" %>
+          <p><%= image_tag artwork.image_url, width: "500px" %></p>
+        <% elsif artwork.art_image %>
+          <p><%= image_tag artwork.art_image.url(:medium) %></p>
+        <% end %>
+
         <p><%= artwork.description %></p>
       </li>
     <% end %>

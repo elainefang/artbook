@@ -9,7 +9,13 @@
       <h3>Latest Project</h3>
       <p><%= following.artworks[-1].title %></p>
 
-      <p><%= image_tag following.artworks[-1].image_url, width: "500px" %></p>
+      <% if following.artworks[-1].image_url != "" %>
+        <p><%= image_tag following.artworks[-1].image_url, width: "500px" %></p>
+      <% elsif following.artworks[-1].art_image %>
+        <p><%= image_tag following.artworks[-1].art_image.url(:medium) %></p>
+      <% end %>
+
+
       <p>Uploaded: <%= following.artworks[-1].created_at.strftime("%b %d, %Y") %>
     <% end %>
 
