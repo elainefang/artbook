@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
   delete '/signout' => 'sessions#destroy'
-
+  get '/random' => 'welcome#random'
+  get '/search' => 'artworks#search'
 
   get '/users/:id/subscriptions' => 'users#subscriptions'
   get '/users/:id/followers' => 'users#followers'

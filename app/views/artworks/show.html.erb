@@ -1,16 +1,8 @@
 <div class="page">
   <% if params[:user_id] %>
     <h1><%= @artwork.title %></h1>
-    <p>By <a href="/users/<%= @page_user.id %>"><%= @artwork.user.first_name %> <%= @artwork.user.last_name %></a></p>
 
-    <% if @artwork.image_url != "" %>
-      <p><%= image_tag @artwork.image_url, width: "500px" %></p>
-    <% elsif @artwork.art_image %>
-      <p><%= image_tag @artwork.art_image.url(:medium) %></p>
-    <% end %>
-
-    <p><%= @artwork.description %></p>
-    <p><%= @artwork.created_at.strftime("%b %d, %Y") %></p>
+      <%= render partial: 'user_artwork', locals: { artwork: @artwork, page_user: @page_user } %>
 
     <% if @page_user == current_user %>
       <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork) %></p>

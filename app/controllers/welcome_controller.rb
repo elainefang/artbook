@@ -4,4 +4,9 @@ class WelcomeController < ApplicationController
     @user = current_user
   end
 
+  def random
+    @all_artworks = Artwork.all
+
+  end
+
 end

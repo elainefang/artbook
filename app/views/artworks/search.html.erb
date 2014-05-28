@@ -1,0 +1,12 @@
+<div class="page">
+
+  <h1>Search Results for "<span class="search_query"><%= params[:q] %></span>":</h1>
+    <ul>
+    <% @results.each do |artwork| %>
+      <li>
+        <p>By <a href="/users/<%= artwork.user.id %>"><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>
+        <%= render partial: 'artwork', locals: { artwork: artwork } %>
+      </li>
+    <% end %>
+    </ul>
+</div>

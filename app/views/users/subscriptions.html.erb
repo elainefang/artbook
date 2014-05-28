@@ -3,26 +3,39 @@
   <h2>Latest Artwork</h2>
 
   <% if @recent_artworks != [] %>
-
+  <ul>
     <% @recent_artworks.first(12).each do |artwork| %>
 
-      <h3><%= artwork.title %></a></h3>
-      <p>By <a href='/users/<%= artwork.user.id.to_s %>'><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>
+      <li><h3><%= artwork.title %></h3>
+        <p>By <a href='/users/<%= artwork.user.id.to_s %>'><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>
 
-      <% if artwork.image_url != "" %>
-        <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.image_url, width: "500px" %></a></p>
-      <% elsif artwork.art_image %>
-        <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.art_image.url(:medium) %></a></p>
-      <% end %>
+        <% if artwork.image_url != "" %>
+          <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.image_url, width: "500px" %></a></p>
+        <% elsif artwork.art_image %>
+          <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.art_image.url(:medium) %></a></p>
+        <% end %>
 
-      <p>Uploaded: <%= artwork.created_at.strftime("%b %d, %Y") %>
-
+        <p>Uploaded: <%= artwork.created_at.strftime("%b %d, %Y") %></li>
 
     <% end %>
 
     <br>
-
+  </ul>
   <% end %>
 
 
+</div>
+
+<div class="followings" role="complementary">
+  <h2>Following:</h2>
+
+  <ul>
+    <% @user.all_following_users.each do |follower| %>
+      <li>
+        <p>
+          <a href='/users/<%= follower.id.to_s %>'><%= image_tag(follower.avatar.url(:tiny), :class => "icon") %></a>
+          <a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a></p>
+      </li>
+    <% end %>
+  </ul>
 </div>

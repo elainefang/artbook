@@ -20,14 +20,22 @@ body {
   padding: 0;
 }
 
+.art_title {
+  font-size: large;
+  font-weight: bold;
+}
+
 div.page {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
+  left: 15%;
   margin: 0 auto;
   margin-bottom: 100px;
   min-height: 350px;
   padding: 50px;
+  position: absolute;
   width: 650px;
+  z-index: 1;
 }
 
   div.page img {
@@ -56,7 +64,7 @@ div.navigation {
 
   border-bottom: 10px ridge navy;
   border-top: 10px groove navy;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -68,12 +76,46 @@ div.navigation {
 div.signin {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  right: 5%;
+  right: 10%;
   padding: 20px;
   position: absolute;
   width: 200px;
+  z-index: 100;
 }
 
-  div.signin img {
+  div.signin .profile {
     border: 2px solid #000;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
   }
+
+    div.signin .profile img {
+      height: 100px;
+      width: 100px;
+    }
+
+div.followings {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  min-height: 50px;
+  padding: 20px;
+  position: absolute;
+  right: 10%;
+  top: 75%;
+  width: 200px;
+}
+
+  div.followings img {
+    border: 2px solid #000;
+    height: 25px;
+    width: 25px;
+  }
+
+ul {
+  list-style-type: none;
+}
+
+span.search_query {
+  color: #CC0000;
+}

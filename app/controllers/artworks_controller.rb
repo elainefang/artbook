@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :require_current_user, except: [:index, :show]
+  before_action :require_current_user, except: [:index, :show, :new, :create, :edit, :search]
   before_action(:load_user, only: [:index, :new, :create, :show, :edit, :update, :destroy] )
   before_action(:load_artwork, { only: [:edit, :update, :show, :destroy] })
 
@@ -41,6 +41,15 @@ class ArtworksController < ApplicationController
       redirect_to user_artworks_path(@user)
     end
   end
+
+  def search
+    @search_terms = params[:q].downcase.split(" ")
+    @all_artwork = Artwork.all
+    @results = @all_artwork.select do |artwork|
+      !(artwork.title.downcase.split(" ") & @search_terms).empty? || !(artwork.description.downcase.split(" ") & @search_terms).empty?
+    end
+  end
+
 
   private
 

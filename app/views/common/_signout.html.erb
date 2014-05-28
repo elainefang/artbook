@@ -5,7 +5,7 @@
     <%= f.submit "Sign Out", id: 'signout' %>
   <% end %>
 
-  <p><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></a></p>
+  <p><div class="profile"><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></div></a></p>
 
   <p><%= link_to "My Gallery", user_artworks_path(current_user) %></p>
 

@@ -1,0 +1,10 @@
+<p><%= link_to artwork.title, user_artwork_path(artwork.user, artwork), :class => "art_title" %></p>
+
+<% if artwork.image_url != "" %>
+  <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.image_url, width: "500px" %></a></p>
+<% elsif artwork.art_image %>
+  <p><a href='/users/<%= artwork.user.id.to_s %>/artworks/<%= artwork.id.to_s %>'><%= image_tag artwork.art_image.url(:medium) %></a></p>
+<% end %>
+
+<p><b>Description:</b> <%= artwork.description %></p>
+<p><b>Uploaded:</b> <%= artwork.created_at.strftime("%b %d, %Y") %></p>

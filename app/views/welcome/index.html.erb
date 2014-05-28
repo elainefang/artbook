@@ -1,12 +1,17 @@
 <div class="page">
   <h1>Artbook</h1>
 
-  <p><%= link_to "Browse", signup_path %></p>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for Art:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+
+  <p><%= link_to "Random", random_path %></p>
   <p>
     <% if signed_in? %>
       <%= link_to "Upload Artwork", new_user_artwork_path(@user) %>
-    <% else %>
-      <%= link_to "Upload Artwork", signin_path %>
     <% end %>
   </p>
 </div>

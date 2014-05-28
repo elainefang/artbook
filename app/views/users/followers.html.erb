@@ -1,26 +1,21 @@
 <div class="page">
   <h1><%= @user.first_name %> <%= @user.last_name %>'s Followers</h1>
 
-
+  <ul>
   <% @user.user_followers.each do |follower| %>
-    <h2>
-      <%= image_tag(follower.avatar.url(:tiny), :class => "icon") %>
-      <a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a>
-    </h2>
+    <li>
+      <h2>
+        <a href='/users/<%= follower.id.to_s %>'><%= image_tag(follower.avatar.url(:tiny), :class => "icon") %></a>
+        <a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a>
+      </h2>
 
-    <% if follower.artworks != [] %>
-      <h3>Latest Project</h3>
-      <p><%= follower.artworks[-1].title %></p>
+      <% if follower.artworks != [] %>
+        <h3>Latest Project</h3>
 
-      <% if follower.artworks[-1].image_url != "" %>
-        <p><%= image_tag follower.artworks[-1].image_url, width: "500px" %></p>
-      <% elsif follower.artworks[-1].art_image %>
-        <p><%= image_tag follower.artworks[-1].art_image.url(:medium) %></p>
-      <% end %>
-
-      <p>Uploaded: <%= follower.artworks[-1].created_at.strftime("%b %d, %Y") %>
-    <% end %>
+        <%= render partial: '/artworks/artwork', locals: { artwork: follower.artworks[-1] } %>
+      <% end %></li>
 
   <% end %>
+  </ul>
 
 </div>
