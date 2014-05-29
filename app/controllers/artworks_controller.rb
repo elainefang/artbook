@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
-  before_action :require_current_user, except: [:index, :show, :new, :create, :edit, :update, :destroy, :search]
   before_action(:load_user, only: [:index, :new, :create, :show, :edit, :update, :destroy] )
+  before_action :require_current_user, except: [:index, :show, :search]
+
   before_action(:load_artwork, { only: [:edit, :update, :show, :destroy] })
 
   def index
