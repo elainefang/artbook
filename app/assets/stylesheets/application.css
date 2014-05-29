@@ -16,6 +16,7 @@
 
 body {
   background: url('http://www.vectorious.net/data/media/1/3768-watercolor%20background.jpg') repeat-x center top fixed;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -43,7 +44,10 @@ div.page {
   }
 
   div.page h1 {
+    color: navy;
     font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
   }
 
   div.page img.icon {
@@ -95,8 +99,14 @@ div.signin {
       width: 100px;
     }
 
-  div.signin a {text-decoration:none;}
-  div.signin a:hover {text-decoration:underline;}
+  div.signin a {
+    font-weight: bold;
+    text-decoration:none;
+  }
+
+  div.signin a:hover {
+    text-decoration:underline;
+  }
 
 div.followings {
   background-color: rgba(255, 255, 255, 0.8);

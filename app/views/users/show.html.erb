@@ -4,10 +4,10 @@
 
   <%= image_tag @user.avatar.url(:medium) %>
 
-  <p>Email: <%= @user.email %></p>
-  <p>Joined: <%= @user.created_at.strftime("%b %d, %Y") %></p>
-  <p>Followers: <a href="/users/<%= @user.id.to_s %>/followers"><%= @user.count_user_followers.to_s %></a></p>
-  <p>Following: <a href="/users/<%= @user.id.to_s %>/subscriptions"><%= @user.follow_count.to_s %></a></p>
+  <p><b>Email:</b> <%= @user.email %></p>
+  <p><b>Joined:</b> <%= @user.created_at.strftime("%b %d, %Y") %></p>
+  <p><b>Followers:</b> <a href="/users/<%= @user.id.to_s %>/followers"><%= @user.count_user_followers.to_s %></a></p>
+  <p><b>Following:</b> <a href="/users/<%= @user.id.to_s %>/subscriptions"><%= @user.follow_count.to_s %></a></p>
 
   <% if current_user == @user %>
     <p><%= link_to "Edit", edit_user_path(@user) %></p>
