@@ -30,11 +30,10 @@
   <h2>Following:</h2>
 
   <ul>
-    <% @user.all_following_users.each do |follower| %>
+    <% @sorted_followings = @user.all_following_users.sort_by{ |user| user.first_name } %>
+    <% @sorted_followings.each do |follower| %>
       <li>
-        <p>
-          <a href='/users/<%= follower.id.to_s %>'><%= image_tag(follower.avatar.url(:tiny), :class => "icon") %></a>
-          <a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a></p>
+        <%= render partial: 'thumbnails_form', locals: { follower: follower } %>
       </li>
     <% end %>
   </ul>

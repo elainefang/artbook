@@ -12,10 +12,24 @@
       <% if follower.artworks != [] %>
         <h3>Latest Project</h3>
 
-        <%= render partial: '/artworks/artwork', locals: { artwork: follower.artworks[-1] } %>
+        <%= render partial: '/artworks/artwork_form', locals: { artwork: follower.artworks[-1] } %>
       <% end %></li>
 
   <% end %>
   </ul>
 
+</div>
+
+<div class="followings" role="complementary">
+  <h2>Followers:</h2>
+
+  <ul>
+    <% @sorted_followers = @user.all_following_users.sort_by{ |user| user.first_name } %>
+    <% @sorted_followers.each do |follower| %>
+      <li>
+        <p>
+          <%= render partial: 'thumbnails_form', locals: { follower: follower } %>
+      </li>
+    <% end %>
+  </ul>
 </div>

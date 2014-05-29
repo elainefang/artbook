@@ -2,7 +2,7 @@
   <% if params[:user_id] %>
     <h1><%= @artwork.title %></h1>
 
-      <%= render partial: 'user_artwork', locals: { artwork: @artwork, page_user: @page_user } %>
+      <%= render partial: 'user_artwork_form', locals: { artwork: @artwork, page_user: @page_user } %>
 
     <% if @page_user == current_user %>
       <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork) %></p>

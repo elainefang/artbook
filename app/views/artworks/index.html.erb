@@ -4,7 +4,7 @@
   <ul>
     <% @artworks.each do |artwork| %>
       <li>
-        <%= render partial: 'artwork', locals: { artwork: artwork } %>
+        <%= render partial: 'artwork_form', locals: { artwork: artwork } %>
       </li>
     <% end %>
   </ul>

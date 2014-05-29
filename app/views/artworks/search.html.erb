@@ -5,8 +5,10 @@
     <% @results.each do |artwork| %>
       <li>
         <p>By <a href="/users/<%= artwork.user.id %>"><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>
-        <%= render partial: 'artwork', locals: { artwork: artwork } %>
+        <%= render partial: 'artwork_form', locals: { artwork: artwork } %>
       </li>
     <% end %>
     </ul>
+
+    <p><a href="/">Back</a></p>
 </div>

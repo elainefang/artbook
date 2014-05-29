@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :require_current_user, except: [:index, :show, :new, :create, :edit, :search]
+  before_action :require_current_user, except: [:index, :show, :new, :create, :edit, :update, :destroy, :search]
   before_action(:load_user, only: [:index, :new, :create, :show, :edit, :update, :destroy] )
   before_action(:load_artwork, { only: [:edit, :update, :show, :destroy] })
 
@@ -45,9 +45,16 @@ class ArtworksController < ApplicationController
   def search
     @search_terms = params[:q].downcase.split(" ")
     @all_artwork = Artwork.all
+
     @results = @all_artwork.select do |artwork|
-      !(artwork.title.downcase.split(" ") & @search_terms).empty? || !(artwork.description.downcase.split(" ") & @search_terms).empty?
+
+      title_words = artwork.title.downcase.gsub(/[^a-z0-9\s]/i, '').split(" ")
+
+      description_words = artwork.description.downcase.gsub(/[^a-z0-9\s]/i, '').split(" ")
+
+      !(title_words & @search_terms).empty? || !(description_words & @search_terms).empty?
     end
+
   end
 
 
