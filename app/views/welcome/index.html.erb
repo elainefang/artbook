@@ -10,10 +10,10 @@
   <% end %>
 
 
-  <p><%= link_to "Random", random_path, :class %></p>
+  <p><%= link_to "Random", random_path, :class => "home_link" %></p>
   <p>
     <% if signed_in? %>
-      <%= link_to "Upload Artwork", new_user_artwork_path(@user) %>
+      <%= link_to "Upload Artwork", new_user_artwork_path(@user), :class => "home_link" %>
     <% end %>
   </p>
 </div>
