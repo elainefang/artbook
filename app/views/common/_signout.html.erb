@@ -7,10 +7,10 @@
 
   <p><div class="profile"><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></div></a></p>
 
-  <p><%= link_to "My Gallery", user_artworks_path(current_user) %></p>
+  <p><%= link_to "My Gallery", user_artworks_path(current_user), :class => "my_links" %></p>
 
-  <p><a href='/users/<%= current_user.id.to_s %>/subscriptions'>My Subscriptions (<%= current_user.follow_count.to_s %>)</a></p>
-  <p><a href='/users/<%= current_user.id.to_s %>/followers'>My Followers (<%= current_user.followers_by_type_count('User').to_s %>)</a></p>
+  <p><a href='/users/<%= current_user.id.to_s %>/subscriptions' class="my_links">My Subscriptions (<%= current_user.follow_count.to_s %>)</a></p>
+  <p><a href='/users/<%= current_user.id.to_s %>/followers' class="my_links">My Followers (<%= current_user.followers_by_type_count('User').to_s %>)</a></p>
 
 <% else %>
 

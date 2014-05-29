@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
 
   def index
     page_user = User.find_by(id: params[:user_id])
-    @artworks = page_user.artworks
+    @artworks = page_user.artworks.reverse
   end
 
   def show
