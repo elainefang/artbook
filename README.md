@@ -1,7 +1,7 @@
 Artbook
 =========
 
-**Artbook** is an online art portfolio application. Artbook was developed as a Rails project within the April 2014 Web Development Immersive course at General Assembly.
+**Artbook** is an online art portfolio application. Users can share artwork and photographs, as well as follow other users. Images can either be uploaded directly or linked from another site. Artbook was developed as a Rails project within the April 2014 Web Development Immersive course at General Assembly.
 
 Technologies Used
 ----

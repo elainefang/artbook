@@ -89,8 +89,9 @@ div.signin {
   border-radius: 10px;
   right: 10%;
   padding: 20px;
+  padding-left: 35px;
   position: absolute;
-  width: 200px;
+  width: 225px;
   z-index: 100;
 }
 
@@ -123,8 +124,8 @@ div.followings {
   padding: 20px;
   position: absolute;
   right: 10%;
-  top: 75%;
-  width: 200px;
+  top: 80%;
+  width: 240px;
 }
 
   div.followings img {
