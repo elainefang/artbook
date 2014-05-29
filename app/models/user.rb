@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :users, through: :follows
 
-
   belongs_to :user
 
   acts_as_follower
@@ -44,16 +43,15 @@ class User < ActiveRecord::Base
   end
 
   # Hash a token:
-  def self.hash(token)
+  def self.hash_token(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
-
 
   private
 
   # Creates a new session token for the user:
   def create_remember_token
-    self.remember_token = User.hash(User.new_remember_token)
+    self.remember_token = User.hash_token(User.new_remember_token)
   end
 
   # Normalize fields for consistency:

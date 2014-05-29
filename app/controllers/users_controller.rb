@@ -65,8 +65,7 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @sorted_followers = @user.following_users.sort_by{ |user| user.first_name }
-
+    @sorted_followers = @user.followers.sort_by{ |user| user.first_name }
   end
 
   def block
