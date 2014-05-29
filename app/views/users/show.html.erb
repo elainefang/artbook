@@ -16,11 +16,18 @@
   <p><%= link_to "Gallery", user_artworks_path(@user) %></p>
 
   <% if current_user %>
-    <% if @user.followed_by?(current_user) %>
-      <p><%= link_to "Unfollow", unfollow_user_path(@user)%></p>
-    <% else %>
-      <p><%= link_to "Follow", follow_user_path(@user)%></p>
+   <% if current_user != @user %>
+      <% if @user.followed_by?(current_user) %>
+        <p><%= link_to "Unfollow", unfollow_user_path(@user)%></p>
+      <% else %>
+        <p><%= link_to "Follow", follow_user_path(@user)%></p>
+      <% end %>
+
+      <p>
+        <a href="/users/<%= @user.id %>/block">Block</a> / <a href="/users/<%= @user.id %>/unblock">Unblock</a>
+      </p>
     <% end %>
   <% end %>
+
 
 </div>

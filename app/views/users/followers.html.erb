@@ -24,7 +24,6 @@
   <h2>Followers:</h2>
 
   <ul>
-    <% @sorted_followers = @user.all_following_users.sort_by{ |user| user.first_name } %>
     <% @sorted_followers.each do |follower| %>
       <li>
         <p>

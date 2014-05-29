@@ -1,20 +1,23 @@
 <div class="page">
   <h1>Random Artwork</h1>
 
-  <% random_artwork = @all_artworks.sample %>
-  <h2><%= random_artwork.title %></h2>
+  <% if @all_artworks != [] %>
+    <% random_artwork = @all_artworks.sample %>
+    <h2><%= random_artwork.title %></h2>
 
-  <p>By <a href="/users/<%= random_artwork.user.id %>"><%= random_artwork.user.first_name %> <%= random_artwork.user.last_name %></a></p>
+    <p>By <a href="/users/<%= random_artwork.user.id %>"><%= random_artwork.user.first_name %> <%= random_artwork.user.last_name %></a></p>
 
-  <% if random_artwork.image_url != "" %>
-    <p><a href="/users/<%= random_artwork.user.id %>/artworks/<%= random_artwork.id %>"><%= image_tag random_artwork.image_url, width: "500px" %></a></p>
-  <% elsif random_artwork.art_image %>
-    <p><%= image_tag random_artwork.art_image.url(:medium) %></p>
+    <% if random_artwork.image_url != "" %>
+      <p><a href="/users/<%= random_artwork.user.id %>/artworks/<%= random_artwork.id %>"><%= image_tag random_artwork.image_url, width: "500px" %></a></p>
+    <% elsif random_artwork.art_image %>
+      <p><%= image_tag random_artwork.art_image.url(:medium) %></p>
+    <% end %>
+
+    <p><b>Description:</b> <%= random_artwork.description %></p>
+    <p><b>Uploaded:</b> <%= random_artwork.created_at.strftime("%b %d, %Y") %></p>
+  <% else %>
+    <h2>There are no artworks to display.</h2>
   <% end %>
-
-  <p><b>Description:</b> <%= random_artwork.description %></p>
-  <p><b>Uploaded:</b> <%= random_artwork.created_at.strftime("%b %d, %Y") %></p>
-
 
 
 

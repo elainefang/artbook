@@ -44,6 +44,7 @@ gem "paperclip", "~> 4.1"
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'pry-stack_explorer'
   gem 'rspec-rails', '~> 2.14.0'
   gem 'shoulda-matchers'
   gem 'capybara'

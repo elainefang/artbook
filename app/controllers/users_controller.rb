@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create, :show, :follow, :unfollow, :subscriptions, :followers]
-  before_action :find_user, only: [:show, :edit, :update, :destroy, :follow, :unfollow, :subscriptions, :followers]
-  before_action :require_current_user, except: [:new, :create, :show, :subscriptions, :followers, :follow, :unfollow]
+  before_action :find_user, only: [:show, :edit, :update, :destroy, :follow, :unfollow, :subscriptions, :followers, :block, :unblock]
+  before_action :require_current_user, except: [:new, :create, :show, :subscriptions, :followers, :follow, :unfollow, :block, :unblock]
 
 
   def new
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -63,10 +62,21 @@ class UsersController < ApplicationController
     end
 
     @recent_artworks = (followed_artworks.sort_by {|artwork| artwork.created_at }).reverse
-
   end
 
   def followers
+    @sorted_followers = @user.following_users.sort_by{ |user| user.first_name }
+
+  end
+
+  def block
+    current_user.block(@user)
+    redirect_to user_path(@user)
+  end
+
+  def unblock
+    current_user.unblock(@user)
+    redirect_to user_path(@user)
   end
 
   private

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/subscriptions' => 'users#subscriptions'
   get '/users/:id/followers' => 'users#followers'
+  get '/users/:id/block' => 'users#block'
+  get '/users/:id/unblock' => 'users#unblock'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

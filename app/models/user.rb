@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
 
   has_many :users, through: :follows
 
+
   belongs_to :user
 
   acts_as_follower
   acts_as_followable
-
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" , :tiny => "25x25"}, :default_url => "http://codegurl.com/wp-content/uploads/2014/05/egg.jpg"
 
@@ -39,12 +39,12 @@ class User < ActiveRecord::Base
 
 
   # Create a new remember token for a user:
-  def User.new_remember_token
+  def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
   # Hash a token:
-  def User.hash(token)
+  def self.hash(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
 
