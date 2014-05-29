@@ -1,8 +1,8 @@
 <div class="page">
   <h1>Artbook</h1>
 
-  <p class="intro">Artbook is an online artwork and photography portfolio.</p>
-  <p class="intro">Browse artwork or create your account today!</p>
+  <p class="intro"><b>Artbook</b> is an online artwork and photography portfolio. Follow your favorite portfolios or create one of your own.</p>
+  <p class="intro">Begin by searching through through the site or click on <b>Randomize</b>.</p>
   <%= form_tag("/search", method: "get") do %>
     <%= label_tag(:q, "Search for Art:") %>
     <%= text_field_tag(:q) %>
@@ -10,7 +10,7 @@
   <% end %>
 
 
-  <p><%= link_to "Random", random_path, :class => "home_link" %></p>
+  <p><%= link_to "Randomize", random_path, :class => "home_link" %></p>
   <p>
     <% if signed_in? %>
       <%= link_to "Upload Artwork", new_user_artwork_path(@user), :class => "home_link" %>
