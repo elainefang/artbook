@@ -21,6 +21,13 @@ body {
   padding: 0;
 }
 
+ul,li {
+  list-style-type: none;
+  list-style-position:inside;
+  margin:0;
+  padding:0;
+}
+
 .art_title {
   font-size: large;
   font-weight: bold;
@@ -126,9 +133,18 @@ div.followings {
     width: 25px;
   }
 
-ul {
-  list-style-type: none;
-}
+  div.followings li {
+    font-size: 20px;
+  }
+
+  div.followings a:link {
+    color: #000;
+    text-decoration: none;
+  }
+
+  div.followings a:hover {
+    text-decoration: underline;
+  }
 
 span.search_query {
   color: #CC0000;
