@@ -18,9 +18,11 @@ User Stories Completed
 ----
 
 * As a user, I should land on a splash page for the site
+* As a user, I should be able to browse and search for art
 * As a user, I should be able to sign in and out of a secure account
-* As a user, I should be able to upload artwork to my online portfolio
-* As a user, I should be able to follow other users who's art I like
+* As a registered user, I should be able to upload artwork to my online portfolio
+* As a registered user, I should be able to follow other users who's art I like
+* As a registered user, I should be able to block other users from following me
 
 
 Backlog
