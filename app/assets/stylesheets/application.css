@@ -28,14 +28,20 @@ ul,li {
   padding:0;
 }
 
-.art_title {
-  font-size: large;
+a.art_title {
+  font-size: 28px;
   font-weight: bold;
+  margin-top: 30px;
+  text-decoration: none;
 }
+  a:hover.art_title {
+    color: #E80000;
+  }
 
 div.page {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
+  font-size: 20px;
   left: 15%;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -90,7 +96,6 @@ div.signin {
   border-radius: 10px;
   right: 10%;
   padding: 20px;
-  padding-left: 35px;
   position: absolute;
   width: 225px;
   z-index: 100;
@@ -109,12 +114,13 @@ div.signin {
     }
 
   div.signin a {
+    font-size: 18px;
     font-weight: bold;
     text-decoration:none;
   }
 
   div.signin a:hover {
-    text-decoration:underline;
+    color: #E80000;
   }
 
 div.followings {
@@ -146,7 +152,7 @@ div.followings {
   }
 
   div.followings a:hover {
-    text-decoration: underline;
+     color: #E80000;
   }
 
 span.search_query {
@@ -155,15 +161,113 @@ span.search_query {
 
 a.main_link {
   color: #4B0082;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
   text-decoration: none;
 }
 
   a:hover.main_link {
-    color: #008000;
+    color: #E80000;
   }
 
-.footer {
 
+input[type=text]
+{
+    background-color: #BFBDBD;
+    border:solid 1px #BFBDBD;
+    color: #000;
+    font-size: 20px;
+    height: 28px;
+    padding-left:10px;
+    width: 191px;
+    box-shadow: 2px 2px 0 #828181 inset;
+}
+input[type=button]
+{
+    background-color: #1E1E1E;
+    color: #000;
+    height: 24px;
+    width: 103px;
+    color: #bbbbbb;
+    text-transform:uppercase;
+    box-shadow:-1px 2px #6E6B6A inset;
+}
+
+input[type=button], input[type=text]
+{
+    border: 0;
+    border-radius:5px;
+    font-family: Sansation,Arial;
+}
+
+.field {
+    background-color: #BFBDBD;
+    border:solid 1px #BFBDBD;
+    border-radius:5px;
+    color: #000;
+    font-family: Sansation,Arial;
+    font-size: 20px;
+    height: 28px;
+    padding-left:10px;
+    width: 191px;
+    box-shadow: 2px 2px 0 #828181 inset;
+
+}
+
+#submit
+{
+    background-color: #E8E8E8;
+    border-radius:5px;
+    color: #000;
+    font-size: 18px;
+    height: 28px;
+}
+
+#session_password, #user_password
+{
+    background-color: #BFBDBD;
+    border:solid 1px #BFBDBD;
+    border-radius:5px;
+    color: #000;
+    font-family: Sansation,Arial;
+    font-size: 20px;
+    height: 28px;
+    padding-left:10px;
+    width: 191px;
+    box-shadow: 2px 2px 0 #828181 inset;
+}
+
+#signin
+{
+    background-color: #E8E8E8;
+    border-radius:5px;
+    color: #000;
+    font-size: 16px;
+    height: 28px;
+}
+
+#signout
+{
+    background-color: #E8E8E8;
+    border-radius:5px;
+    color: #000;
+    font-size: 12px;
+    height: 20px;
+}
+
+input#artwork_art_image {
+
+  border-radius:5px;
+  color: #000;
+  font-size: 16px;
+  height: 28px;
+}
+
+input.search
+{
+    background-color: #E8E8E8;
+    border-radius:5px;
+    color: #000;
+    font-size: 16px;
+    height: 28px;
 }

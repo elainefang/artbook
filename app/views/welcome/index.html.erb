@@ -6,7 +6,7 @@
   <%= form_tag("/search", method: "get") do %>
     <%= label_tag(:q, "Search for Art:") %>
     <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
+    <%= submit_tag("Search", :class => "search") %>
   <% end %>
 
 
