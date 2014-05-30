@@ -272,3 +272,11 @@ input.search
     font-size: 16px;
     height: 28px;
 }
+
+input.delete_button {
+  background-color: #E8E8E8;
+  border-radius:5px;
+  color: #000;
+  font-size: 16px;
+  height: 28px;
+}
