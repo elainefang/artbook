@@ -238,7 +238,7 @@ input[type=button], input[type=text]
     box-shadow: 2px 2px 0 #828181 inset;
 }
 
-#signin
+#signin, #destroy
 {
     background-color: #E8E8E8;
     border-radius:5px;
