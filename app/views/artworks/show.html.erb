@@ -5,7 +5,7 @@
       <%= render partial: 'user_artwork_form', locals: { artwork: @artwork, page_user: @page_user } %>
 
     <% if @page_user == current_user %>
-      <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork) %></p>
+      <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork), :class => "main_link"  %></p>
       <p>
         <%= form_for [@user, @artwork], method: 'delete' do |f| %>
           <%= f.submit "Remove Artwork", id: "destroy" %>

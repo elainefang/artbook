@@ -4,7 +4,7 @@
 
   <% if @recent_artworks != [] %>
   <ul>
-    <% @recent_artworks.first(12).each do |artwork| %>
+    <% @recent_artworks.first(20).each do |artwork| %>
 
       <li><h3><%= artwork.title %></h3>
         <p>By <a href='/users/<%= artwork.user.id.to_s %>'><%= artwork.user.first_name %> <%= artwork.user.last_name %></a></p>

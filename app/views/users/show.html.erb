@@ -18,13 +18,13 @@
   <% if current_user %>
    <% if current_user != @user %>
       <% if @user.followed_by?(current_user) %>
-        <p><%= link_to "Unfollow", unfollow_user_path(@user)%></p>
+        <p><%= link_to "Unfollow", unfollow_user_path(@user), :class => "main_link" %></p>
       <% else %>
-        <p><%= link_to "Follow", follow_user_path(@user)%></p>
+        <p><%= link_to "Follow", follow_user_path(@user), :class => "main_link" %></p>
       <% end %>
 
       <p>
-        <a href="/users/<%= @user.id %>/block">Block</a> / <a href="/users/<%= @user.id %>/unblock">Unblock</a>
+        <a href="/users/<%= @user.id %>/block" class="main_link">Block</a>  <a href="/users/<%= @user.id %>/unblock" class="main_link">Unblock</a>
       </p>
     <% end %>
   <% end %>

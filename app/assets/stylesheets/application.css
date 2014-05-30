@@ -41,6 +41,7 @@ div.page {
   margin-bottom: 100px;
   min-height: 350px;
   padding: 50px;
+  padding-left: 75px;
   position: absolute;
   width: 650px;
   z-index: 1;
@@ -126,6 +127,7 @@ div.followings {
   right: 10%;
   top: 80%;
   width: 240px;
+  z-index: 100;
 }
 
   div.followings img {
@@ -149,4 +151,19 @@ div.followings {
 
 span.search_query {
   color: #CC0000;
+}
+
+a.main_link {
+  color: #4B0082;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+  a:hover.main_link {
+    color: #008000;
+  }
+
+.footer {
+
 }
