@@ -94,10 +94,10 @@ div.navigation {
 div.signin {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  right: 10%;
+  right: 9%;
   padding: 20px;
   position: absolute;
-  width: 225px;
+  width: 240px;
   z-index: 100;
 }
 
@@ -114,6 +114,7 @@ div.signin {
     }
 
   div.signin a {
+    color: #003399;
     font-size: 18px;
     font-weight: bold;
     text-decoration:none;
@@ -130,8 +131,8 @@ div.followings {
   min-height: 50px;
   padding: 20px;
   position: absolute;
-  right: 10%;
-  top: 80%;
+  right: 9%;
+  top: 75%;
   width: 240px;
   z-index: 100;
 }
