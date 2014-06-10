@@ -16,7 +16,6 @@
 
 body {
   background: url('/images/original.jpg') repeat-x center top fixed;
-  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
