@@ -4,7 +4,7 @@ class AddComments < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.references :artwork
-      t.user_id :integer
+      t.integer :user_id
       t.timestamps
     end
   end

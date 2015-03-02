@@ -1,17 +1,31 @@
 <div class="page">
   <% if params[:user_id] %>
-    <h1><%= @artwork.title %></h1>
+	<h1><%= @artwork.title %></h1>
 
-      <%= render partial: 'user_artwork_form', locals: { artwork: @artwork, page_user: @page_user } %>
+	<%= render partial: 'user_artwork_form', locals: { artwork: @artwork, page_user: @page_user } %>
 
-    <% if @page_user == current_user %>
-      <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork), :class => "main_link" %></p>
-      <p>
-        <%= form_for [@user, @artwork], method: 'delete' do |f| %>
-          <%= f.submit "Remove Artwork", id: "destroy" %>
-        <% end %>
-      </p>
-    <% end %>
+	<p>
+	  <% if signed_in? %>
+		<%= link_to "Add Comment", new_artwork_comment_path(@artwork), :class => "main_link" %>
+	  <% end %>
+	</p>
+
+	<% if @page_user == current_user %>
+	  <p><%= link_to "Edit", edit_user_artwork_path(@user, @artwork), :class => "main_link" %></p>
+	  <p>
+		<%= form_for [@user, @artwork], method: 'delete' do |f| %>
+		  <%= f.submit "Remove Artwork", id: "destroy" %>
+		<% end %>
+	  </p>
+	<% end %>
+
+    <ul>
+      <% @comments.each do |comment| %>
+        <li>
+          <%= render partial: 'comments/comment_display_form', locals: { comment: comment } %>
+        </li>
+      <% end %>
+    </ul>
 
   <% end %>
 </div>

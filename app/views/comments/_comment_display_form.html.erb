@@ -1,0 +1,8 @@
+<div class="comment">
+  <% if comment.title %>
+    <p><b><%= comment.title %></b></p>
+  <% end %>
+
+  <p class="comment-text"><%= comment.content %></p>
+  <p class="commenter">By <a href="/users/<%= comment.user_id %>"><%= User.find_by(id: comment.user_id).first_name %> <%= User.find_by(id: comment.user_id).last_name %></a></p>
+</div>

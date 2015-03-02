@@ -1,0 +1,12 @@
+<%= form_for [@artwork, @comment] do |f| %>
+
+    <p><%= f.label :title %>
+      <%= f.text_field :title %></p>
+
+    <p><%= f.label :content %>
+      <%= f.text_field :content %></p>
+
+    <%= f.submit "Submit", id: "submit" %>
+<% end %>
+
+<p><a href="/users/<%= @user.id %>/artworks" class="main_link">Cancel</a></p>

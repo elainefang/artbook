@@ -13,6 +13,7 @@ class ArtworksController < ApplicationController
     if params[:user_id]
       @page_user = User.find_by(id: params[:user_id])
       @artwork = Artwork.find(params[:id])
+      @comments = @artwork.comments
     end
   end
 
