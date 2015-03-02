@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     end
     resources :artworks
   end
+
+  resources :artworks do
+    resources :comments
+  end
+
   resources :sessions, only: [:create]
 
 
