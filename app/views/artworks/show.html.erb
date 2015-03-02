@@ -20,10 +20,12 @@
 	<% end %>
 
     <ul>
-      <% @comments.each do |comment| %>
-        <li>
-          <%= render partial: 'comments/comment_display_form', locals: { comment: comment } %>
-        </li>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <li>
+            <%= render partial: 'comments/comment_display_form', locals: { comment: comment } %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
 
