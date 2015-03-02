@@ -260,7 +260,7 @@ input[type=button], input[type=text]
 
 input#artwork_art_image, input#user_avatar {
 
-  border-radius:5px;
+  border-radius: 5px;
   color: #000;
   font-size: 16px;
   height: 28px;
@@ -285,6 +285,11 @@ input.delete_button {
 
 div.comment {
   border: 1px dotted black;
-  margin: 10px auto;
-  padding: 5px;
+  border-radius: 5px;
+  margin: 15px auto;
+  padding: 10px 20px;
+}
+
+div.comment p {
+  margin: 5px auto;
 }
