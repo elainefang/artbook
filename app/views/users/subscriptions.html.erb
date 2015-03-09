@@ -29,13 +29,12 @@
 <div class="followings" role="complementary">
   <h2>Following:</h2>
 
-  <ul>
+  <ul class="users-list">
     <% @sorted_followings = @user.all_following_users.sort_by{ |user| user.first_name } %>
     <% @sorted_followings.each do |follower| %>
       <li>
         <%= render partial: 'thumbnails_form', locals: { follower: follower } %>
       </li>
-
     <% end %>
   </ul>
 </div>

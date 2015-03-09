@@ -4,7 +4,11 @@
   <% end %>
 
   <p class="comment-text"><%= comment.content %></p>
-  <p class="commenter">By <a href="/users/<%= comment.user_id %>"><%= User.find_by(id: comment.user_id).first_name %> <%= User.find_by(id: comment.user_id).last_name %></a></p>
+
+  <div class="signature">
+    <p class="commenter"><%= render partial: 'users/thumbnails_form', locals: { follower: User.find_by(id: comment.user_id) } %></p>
+    <p class="post-date"><b>Posted:</b> <%= comment.created_at.strftime("%B %d, %Y") %></p>
+  </div>
 
   <% if current_user && (comment.user_id == current_user.id) %>
     <%= form_for [@artwork, comment], method: 'delete' do |f| %>

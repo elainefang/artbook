@@ -1,9 +1,10 @@
+
 <%= form_for [@artwork, @comment] do |f| %>
 
-    <p><%= f.label :title %>
+    <p><%= f.label :title, "Title (optional):" %>
       <%= f.text_field :title %></p>
 
-    <p><%= f.label :content %>
+    <p><%= f.label :content, "Comment:" %>
       <%= f.text_field :content %></p>
 
     <%= f.submit "Submit", id: "submit" %>

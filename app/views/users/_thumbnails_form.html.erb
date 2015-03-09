@@ -1,2 +1,2 @@
 <a href='/users/<%= follower.id.to_s %>'><%= image_tag(follower.avatar.url(:tiny), :class => "icon") %></a>
-<a href='/users/<%= follower.id.to_s %>'><%= follower.first_name %> <%= follower.last_name %></a></p>
+<a href='/users/<%= follower.id.to_s %>' class="username"><%= follower.first_name %> <%= follower.last_name %></a></p>

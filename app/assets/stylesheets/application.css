@@ -290,6 +290,24 @@ div.comment {
   padding: 10px 20px;
 }
 
-div.comment p {
-  margin: 5px auto;
+  div.comment p {
+    margin: 5px auto;
+  }
+
+div.signature { overflow: hidden }
+
+  div.signature p.commenter{
+    float: left;
+  }
+
+  div.signature p.post-date{
+    float: right;
+  }
+
+li.users-list {
+
 }
+
+  li.users-list a.username {
+
+  }
