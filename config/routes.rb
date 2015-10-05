@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       get :follow
       get :unfollow
     end
-    resources :artworks
+    resources :artworks do
+      resources :comments, except: [:index]
+    end
   end
   resources :sessions, only: [:create]
 
